@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice & File download</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .invoice-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .company-info, .client-info, .invoice-info {
+            margin-bottom: 20px;
+        }
+        .company-info {
+            text-align: left;
+        }
+        .client-info, .invoice-info {
+            text-align: right;
+        }
+        .company-info, .client-info, .invoice-info, .items, .summary {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .items table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .items th, .items td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .items th {
+            background-color: #f4f4f4;
+        }
+        .summary {
+            text-align: right;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+    </style>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .download-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 20px 0;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="invoice-container">
+        <h1>Invoice & File Download</h1>
+        
+        <p>Hotel Kabalana Bronchure - A4 Landscape</p>
+
+
+        <div class="items">
+            <table>
+                <tr>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Type</th>
+                    <th>Cost</th>
+                </tr>
+                <tr>
+                    <td>Hotel Bronchure</td>
+                    <td>1</td>
+                    <td>.PDF</td>
+                    <td>$0.00 (0.00 LKR)</td>
+                </tr>
+                    <td>Fees</td>
+                    <td>0</td>
+                    <td>-</td>
+                    <td>$0.00 (0.00 LKR)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="summary">
+            <h2>Grand Total: <b>0.00 USD</b> <i>(0.00 LKR)</i></br></h2>
+            <p>*Last USD rate check on Jun 21, 11:20 UTC · Disclaimer</p>
+        </div>
+
+       
+            
+            <style>
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border: 1px solid #ccc;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+
+<table>
+    <tr>
+        <th>Detail</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>File Name</td>
+        <td><b>Hotel Kabalana - A4</b></td>
+    </tr>
+    <tr>
+        <td>Description</td>
+        <td>Print Ready .PDF</td>
+    </tr>
+    <tr>
+        <td>Size</td>
+        <td>11.2 MB</td>
+    </tr>
+    <tr>
+        <td>Downloads</td>
+        <td>Private</td>
+    </tr>
+</table>
+
+
+<script>
+        function startDownloadTimer() {
+            document.getElementById('message').classList.remove('hidden');
+            document.getElementById('countdown').classList.remove('hidden');
+
+            var timeleft = 25;
+            var downloadTimer = setInterval(function() {
+                if(timeleft <= 0){
+                    clearInterval(downloadTimer);
+                    document.getElementById('countdown').innerHTML = "Download starting now...";
+                    var link = document.createElement('a');
+                    link.href = 'file/Hotel Kabalana Bronchure.pdf'; // Change this to the actual file path
+                    link.download = 'Kabalana Hotel Bronchure'; // Change this to the actual file name
+                    link.click();
+                } else {
+                    document.getElementById('countdown').innerHTML = timeleft + " seconds remaining";
+                }
+                timeleft -= 1;
+            }, 1000);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Download Your File</h1>
+        <p>Click the button below to start your download.</p>
+        <button class="download-button" onclick="startDownloadTimer()">Download</button>
+        <p id="message" class="hidden">Your download will start in:</p>
+        <p id="countdown" class="hidden"></p>
+
+
+
+
+        <div class="footer">
+            <p>Thank you for your business!</p>
+        </div>
+    </div>
+</body>
+</html>
